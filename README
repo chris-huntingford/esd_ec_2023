@@ -1,0 +1,5 @@
+"algebra_check_box_model.py"                 - code to check the algebra of the box model
+"algebra_check_spatial_model_seasonal.py"    - code to check the algebra of the model with an "x" component and seasonal forcing
+"algebra_check_spatial_model_long_term.py"   - code to check the algebra of the model with an "x" component and long-term forcing
+"fig1.py"                                    - code to make Figure 1
+"fig2.py"                                    - code to make Figure 2
