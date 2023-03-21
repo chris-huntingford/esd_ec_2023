@@ -31,10 +31,10 @@ for i in range(0, 50):
     rect = patches.Rectangle((0.8+right_nudge+(float(i)*0.05), 5.3+up_nudge), 1.6*0.05, 0.7, facecolor='paleturquoise', edgecolor='paleturquoise', zorder=-10, alpha=1.0-float(i)*0.02)
     ax1.add_patch(rect)
 
-ax1.text(2.0+right_nudge, 5.6+up_nudge, r'$c_{p_{i}}^{\prime} \dfrac{\partial T}{\partial t} = \kappa_{i} \dfrac{\partial^{2} T_{i}}{\partial x^{2}} $', ha='center', fontsize=ft_size+2, va='center')
+ax1.text(2.0+right_nudge, 5.6+up_nudge, r'$c_{p_{i}}^{\prime} \dfrac{\partial T}{\partial t} = \kappa_{i} \dfrac{\partial^{2} T_{i}}{\partial z^{2}} $', ha='center', fontsize=ft_size+2, va='center')
 
-ax1.text(1.0+right_nudge, 5.2+up_nudge, r'$x=0$', ha='center', fontsize=ft_size-3, va='center')
-ax1.text(3.1+right_nudge, 5.2+up_nudge, r'$x \rightarrow \infty$', ha='center', fontsize=ft_size-3, va='center')
+ax1.text(1.0+right_nudge, 5.2+up_nudge, r'$z=0$', ha='center', fontsize=ft_size-3, va='center')
+ax1.text(3.1+right_nudge, 5.2+up_nudge, r'$z \rightarrow \infty$', ha='center', fontsize=ft_size-3, va='center')
 
 # Top arrow down
 ax1.annotate('', xy=(2.0+right_nudge-1.2, 5.8+up_nudge), xytext=(2.0+right_nudge-1.7, 5.8+up_nudge), arrowprops=prop_out)
@@ -47,7 +47,7 @@ ax1.plot([2.0+right_nudge-1.2, 2.0+right_nudge-1.7], [5.5+up_nudge, 5.5+up_nudge
 
 ax1.text(2.0+right_nudge - 0.25, 4.2+up_nudge, r'$T_{i}(0,t) = \underbrace{2H_{0} \sqrt{ \frac{t}{c_{p_{i}}^{\prime} \kappa_{i} \pi}}}_\text{\parbox{2cm}{\centering {\small Background\\[-4pt] Warming}}} + \underbrace{\frac{b \cos(\omega t - \pi/4)}{\sqrt{c_{p_{i}}^{\prime}\kappa_{i}\omega}} }_\text{\parbox{2cm}{\centering {\small Seasonal\\[-4pt] Variation}}}$', ha='center', fontsize=ft_size, va='center')
 
-ax1.text(2.0+right_nudge - 0.2, 6.9+up_nudge, r'$H(t) = - \kappa_{i} \left.\dfrac{\partial T_{i}}{\partial x} \right|_{x=0}   = \underbrace{H_{0}}_\text{\parbox{2cm}{\centering {\small Background\\[-4pt] Forcing}}} + \underbrace{b \cos(\omega t)}_\text{\parbox{2cm}{\centering {\small Seasonal\\[-4pt] Forcing}}}$', ha='center', fontsize=ft_size, va='center')
+ax1.text(2.0+right_nudge - 0.2, 6.9+up_nudge, r'$H(t) = - \kappa_{i} \left.\dfrac{\partial T_{i}}{\partial z} \right|_{z=0}   = \underbrace{H_{0}}_\text{\parbox{2cm}{\centering {\small Background\\[-4pt] Forcing}}} + \underbrace{b \cos(\omega t)}_\text{\parbox{2cm}{\centering {\small Seasonal\\[-4pt] Forcing}}}$', ha='center', fontsize=ft_size, va='center')
 
 ax1.text(-0.5, 7.1+up_nudge, r'$\textrm{Forcing}:$', ha='left', fontsize=15, va='center')
 ax1.text(-0.5, 5.7+up_nudge, r'$\textrm{Model}:$', ha='left', fontsize=15, va='center')
@@ -67,12 +67,12 @@ ax1.annotate('', xy=(2.0, 0.95), xytext=(1.08, 0.25), arrowprops=prop_plot_extra
 ax1.text(1.25, 0.15, r'$\textrm{Decreasing } c_{p_{i}}^{\prime} \kappa_{i}$', fontsize=9, ha='left', va='bottom', rotation = 36.0)
 
 
-ax1.text(-0.2, 2.8, r'$\sqrt{t} \left.\overline{\dfrac{\mbox{d}T_{i}}{\mbox{d}t}}\right|_{x=0} = \dfrac{H_{0}}{\sqrt{c_{p_{i}}^{\prime} \kappa_{i} \pi}}$', fontsize=15)
+ax1.text(-0.2, 2.8, r'$\sqrt{t} \left.\overline{\dfrac{\mbox{d}T_{i}}{\mbox{d}t}}\right|_{z=0} = \dfrac{H_{0}}{\sqrt{c_{p_{i}}^{\prime} \kappa_{i} \pi}}$', fontsize=15)
 ax1.text(-0.02, 0.22, r'$\textrm{Annual running mean}$', fontsize=11, rotation=90.0, ha='left', va='bottom')
 ax1.text(0.16, 0.22, r'$\textrm{warming rate $\times \sqrt{t}$ (K yr$^{-1/2}$)}$', fontsize=11, rotation=90.0, ha='left', va='bottom')
 
 ax1.text(0.8, -0.2, r'$\textrm{Seasonal range (K)}$', fontsize=11, ha='left', va='bottom')
-ax1.text(2.5, -0.55, r'$\left.\Delta T_{\textrm{S }}\right|_{x=0}=\dfrac{2b}{\sqrt{c_{p_{i}}^{\prime} \kappa_{i} \omega}}$', fontsize=15)
+ax1.text(2.5, -0.55, r'$\left.\Delta T_{\textrm{S }}\right|_{z=0}=\dfrac{2b}{\sqrt{c_{p_{i}}^{\prime} \kappa_{i} \omega}}$', fontsize=15)
 # Crazy thing - doube subscripts not working
 ax1.text(2.9, -0.41, r'$i$', fontsize=11)
 

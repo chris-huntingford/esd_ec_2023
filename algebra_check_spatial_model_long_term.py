@@ -8,7 +8,7 @@ from sympy.abc import t         # t is the independent variable.
 from sympy.abc import omega     # omega gives the wavelength of 
 from sympy.abc import kappa     # omega gives the wavelength of 
 from sympy.abc import b         # t is the independent variable.
-from sympy.abc import x         # t is the independent variable.
+from sympy.abc import z         # t is the independent variable.
 from sympy.abc import pi        # t is the independent variable.
 from sympy.abc import T         # T is the state variable of temperature.
 from sympy import Function, dsolve, Derivative, init_printing, symbols, diff, simplify
@@ -26,8 +26,8 @@ print('Proposed Solution that satisfies the PDE and long-term boundary condition
 print('************************************************************************')
 factor1 = (2*H0) / kappa
 factor2 = sqrt( ( (kappa/c_p_dash) * t) / (pi) )
-factor3 = exp(-(x**2)/(4*(kappa/c_p_dash)*t))
-factor4 = (x/2)*erfc(x/(2*sqrt((kappa/c_p_dash)*t)))
+factor3 = exp(-(z**2)/(4*(kappa/c_p_dash)*t))
+factor4 = (z/2)*erfc(z/(2*sqrt((kappa/c_p_dash)*t)))
 soln_test = factor1*(factor2*factor3 - factor4)
 display(soln_test)
 
@@ -44,33 +44,33 @@ deriv_t = diff(c_p_dash*soln_test, t)
 display(deriv_t)
 
 print(' ')
-print('Right-hand side: kappa * 2nd Derivative wrt x')
+print('Right-hand side: kappa * 2nd Derivative wrt z')
 print('********************')
-deriv_xx = diff(kappa*soln_test, x, x)
-display(deriv_xx)
+deriv_zz = diff(kappa*soln_test, z, z)
+display(deriv_zz)
 
 print(' ')
 print('Equality check (should be zero)')
 print('*******************************')
-difference_expr = simplify(deriv_t - deriv_xx)
+difference_expr = simplify(deriv_t - deriv_zz)
 display(difference_expr)
 
 print(' ')
 print(' ')
 print(' ')
-print('Now print out the gradient, kappa dT/dx at x=0 - which should give -H0  (Eqn(12))')
+print('Now print out the gradient, kappa dT/dz at z=0 - which should give -H0  (Eqn(12))')
 print('*****************************************************')
-deriv_x = diff(kappa*soln_test, x)
-deriv_x_at_x_zero = deriv_x.subs(x, 0)
-expr_gradient = simplify(deriv_x_at_x_zero)
+deriv_z = diff(kappa*soln_test, z)
+deriv_z_at_z_zero = deriv_z.subs(z, 0)
+expr_gradient = simplify(deriv_z_at_z_zero)
 display(expr_gradient)
 
 print(' ')
 print(' ')
 print(' ')
-print('And print out the solution as the surface, i.e. x=0 - should be Eqn(14)')
+print('And print out the solution as the surface, i.e. z=0 - should be Eqn(14)')
 print('*****************************************************')
-val_at_x_zero = soln_test.subs(x, 0)
-display(val_at_x_zero)
+val_at_z_zero = soln_test.subs(z, 0)
+display(val_at_z_zero)
 
 sys.exit()
